@@ -53,6 +53,8 @@ resource "aws_security_group" "MyLab_sec_Group" {
     Name = " Allow traffic"
    } 
    }
+   
+
 
 
 }
