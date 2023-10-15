@@ -43,7 +43,7 @@ resource "aws_internet_gateway" "MyLab-InternetGW" {
 }
 
 # Create Security Group
-resource "aws_security_group" "MyLb_sec_group" {
+resource "aws_security_group" "MyLab_sec_Group" {
   name = "MyLab Security Group"
   description = "To Allow Inbound and outbound traffic to mylab"
   vpc_id = aws_vpc.MyLab-Vpc.id
