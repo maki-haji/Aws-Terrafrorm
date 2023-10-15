@@ -32,3 +32,13 @@ resource "aws_subnet" "MyLab-Subnet1" {
   }
 } 
 
+# creating internet Gateway
+resource "aws_internet_gateway" "MyLab-InternetGW" {
+  vpc_id = aws_vpc.MyLab-Vpc.id
+
+  tags = {
+    Name = MyLab-InternetGW
+  }
+  
+}
+
