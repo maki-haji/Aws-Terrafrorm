@@ -19,3 +19,13 @@ resource "aws_vpc" "MyLab-Vpc" {
      Name = "MyLab-Vpc"
   }
 }
+
+# creating Subnet (Public)
+resource "aws_subnet" "MyLab-Subnet1" {
+  vpc_id     = aws_vpc.MyLab-Vpc.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "MyLab-Subnet1"
+  }
+} 
