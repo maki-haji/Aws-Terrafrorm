@@ -30,6 +30,8 @@ resource "aws_subnet" "MyLab-Subnet1" {
   }
 } 
 
+
+
 resource "aws_security_group" "MyLab_sec_Group" {
   name = "myLab Security Group"
   description = "To Allow Inbound and Ourbound traffic to mylab"
