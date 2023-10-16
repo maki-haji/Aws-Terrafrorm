@@ -41,7 +41,7 @@ resource "aws_internet_gateway" "MyLab-InternetGW" {
   }
   
 }
-resource "aws_Security_Group" "MyLab_Sec_Group" {
+resource "aws_security_group" "MyLab_Sec_Group" {
   name = "MyLab Security Group"
   description = "To Allow inbound and outbound traffic to mylab"
   vpc_id = aws_vpc.MyLab-Vpc.id
@@ -49,19 +49,21 @@ resource "aws_Security_Group" "MyLab_Sec_Group" {
   ingress {
     from_port = 22
     to_port = 22
-    protcol = "tcp"
+    protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 
-    egress {
-      from_port = 0
-      to_port = 0
-      protcol = "-1"
-      cidr_blocks = ["0.0.0.0/0"]
-    }
-    tags = {
-      Name = "Allow Traffic"
-    }  
   }
+  egress {
+     from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
+
+ tags = {
+  Name = " Allow traffic"
+ }   
 }
+
 
 
