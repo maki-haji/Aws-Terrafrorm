@@ -48,7 +48,7 @@ resource "aws_security_group" "Mylab_sec_group" {
   description = "To Allow Inbound and Ourbound traffic to mylab"
   vpc_id = aws_vpc.MyLab-Vpc.id
 
-  ingress {
+  ingress = {
     from_port = 22
     to_port = 22
     protocol = "tcp"
