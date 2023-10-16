@@ -41,36 +41,3 @@ resource "aws_internet_gateway" "MyLab-InternetGW" {
   }
   
 }
-resource "aws_security_group" "MyLab_sec_Group" {
-  name = "MyLab Security Group"
-  description = "To Allow Inbound and outbound traffic to mylab"
-  vpc_id = aws_vpc.MyLab-Vpc.id
-
-  ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-
-  }
-
-  egress {
-
-
-  }
-
-
-  }
-
-  
-
-
-
-
-
-
-
-
-
-
-
