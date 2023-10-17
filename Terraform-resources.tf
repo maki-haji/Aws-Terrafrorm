@@ -15,7 +15,7 @@ provider "aws" {
 
 
 resource "aws_vpc" "MyLab-Vpc" {
-  cidr_block = "172.20.0.0/16"
+  cidr_block = var.cidr_block[0]
   tags = {
      Name = "MyLab-Vpc"
     
@@ -25,7 +25,7 @@ resource "aws_vpc" "MyLab-Vpc" {
 # creating Subnet (Public)
 resource "aws_subnet" "MyLab-Subnet1" {
   vpc_id     = aws_vpc.MyLab-Vpc.id
-  cidr_block = "172.20.10.0/24"
+  cidr_block = var.cidr_block[1]
 
   tags = {
     Name = "MyLab-Subnet1"
@@ -65,5 +65,12 @@ resource "aws_security_group" "MyLab_Sec_Group" {
  }   
 }
 
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
 
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
 
