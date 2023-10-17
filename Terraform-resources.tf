@@ -65,7 +65,7 @@ resource "aws_security_group" "MyLab_Sec_Group" {
  }   
 }
 
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "Soomaali-wayn-bucket-01" {
   bucket = "my-tf-test-bucket"
 
   tags = {
