@@ -69,7 +69,7 @@ resource "aws_s3_bucket" "example" {
   bucket = "my-tf-test-bucket"
 
   tags = {
-    Name        = "My-Best-bucket"
+    Name        = "My-BestOne-bucket01"
     
   }
 }
